@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="batches.list">
+      <field name="name">batches list</field>
+      <field name="model">batches.batches</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="code"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="batches.action_window">
+      <field name="name">batches window</field>
+      <field name="res_model">batches.batches</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="batches.action_server">
+      <field name="name">batches server</field>
+      <field name="model_id" ref="model_batches_batches"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+-->
+    <!-- Top menu item -->
+
+    <menuitem name="Batches" id="batches.menu_root"/>
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="batches.menu_1" parent="batches.menu_root"/>
+    <menuitem name="Menu 2" id="batches.menu_2" parent="batches.menu_root"/>
+-->
+    <!-- actions -->
+    <menuitem name="List" id="batches.menu_1_list" parent="batches.menu_root"
+              action="batches.action_window"/>
+<!--
+    <menuitem name="Server to list" id="batches" parent="batches.menu_2"
+              action="batches.action_server"/>
+-->
+
+  </data>
+</odoo>
