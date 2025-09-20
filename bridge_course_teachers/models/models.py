@@ -3,9 +3,9 @@
 from odoo import models, fields, api
 
 
-# class bridge_batch_semester(models.Model):
-#     _name = 'bridge_batch_semester.bridge_batch_semester'
-#     _description = 'bridge_batch_semester.bridge_batch_semester'
+# class bridge_course_teachers(models.Model):
+#     _name = 'bridge_course_teachers.bridge_course_teachers'
+#     _description = 'bridge_course_teachers.bridge_course_teachers'
 
 #     name = fields.Char()
 #     value = fields.Integer()
@@ -17,7 +17,7 @@ from odoo import models, fields, api
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-class Batch(models.Model):
-    _inherit = ["batches.batches"]
+class Course(models.Model):
+    _inherit = ["courses.courses"]
 
-    semester = fields.Many2one("semester.semester")
+    teachers = fields.Many2many("teachers.teachers")
