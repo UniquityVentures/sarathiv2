@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_topic_user,topic.topic.user,model_topic_topic,base.group_user,1,0,0,0
+access_topic_manager,topic.topic.manager,model_topic_topic,base.group_user,1,1,1,1

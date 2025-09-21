@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bridge_student_assessment_student_user,bridge.student.assessment.student.user,model_assessments_student_assessment,base.group_user,1,0,0,0
+access_bridge_student_assessment_student_manager,bridge.student.assessment.student.manager,model_assessments_student_assessment,base.group_user,1,1,1,1

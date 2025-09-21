@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_syllabus_user,syllabus.syllabus.user,model_syllabus_syllabus,base.group_user,1,0,0,0
+access_syllabus_manager,syllabus.syllabus.manager,model_syllabus_syllabus,base.group_user,1,1,1,1
+access_chapter_user,syllabus.chapter.user,model_syllabus_chapter,base.group_user,1,0,0,0
+access_chapter_manager,syllabus.chapter.manager,model_syllabus_chapter,base.group_user,1,1,1,1

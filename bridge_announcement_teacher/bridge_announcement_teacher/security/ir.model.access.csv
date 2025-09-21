@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bridge_announcement_teacher_user,bridge.announcement.teacher.user,model_announcements_announcements,base.group_user,1,0,0,0
+access_bridge_announcement_teacher_manager,bridge.announcement.teacher.manager,model_announcements_announcements,base.group_user,1,1,1,1

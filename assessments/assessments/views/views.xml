@@ -1,0 +1,164 @@
+<odoo>
+  <data>
+    <!-- Assessment Form View -->
+    <record model="ir.ui.view" id="assessment_form_view">
+      <field name="name">assessment.form</field>
+      <field name="model">assessments.assessments</field>
+      <field name="arch" type="xml">
+        <form string="Assessment">
+          <sheet>
+            <group>
+              <group>
+                <field name="title"/>
+                <field name="datetime"/>
+                <field name="venue"/>
+              </group>
+              <group>
+                <field name="is_active"/>
+                <field name="max_marks"/>
+                <field name="passing_marks"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Details">
+                <field name="description" widget="html"/>
+                <field name="syllabus"/>
+              </page>
+              <page string="Student Results">
+                <field name="student_assessment_ids">
+                    <tree>
+                        <field name="student_id"/>
+                        <field name="marks"/>
+                        <field name="status"/>
+                    </tree>
+                    <form>
+                        <group>
+                            <field name="student_id"/>
+                            <field name="marks"/>
+                            <field name="status"/>
+                            <field name="remarks"/>
+                        </group>
+                    </form>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Assessment Tree/List View -->
+    <record model="ir.ui.view" id="assessment_tree_view">
+      <field name="name">assessment.tree</field>
+      <field name="model">assessments.assessments</field>
+      <field name="arch" type="xml">
+        <tree string="Assessments" decoration-danger="not is_active">
+          <field name="title"/>
+          <field name="datetime"/>
+          <field name="venue"/>
+          <field name="max_marks"/>
+          <field name="passing_marks"/>
+          <field name="is_active" invisible="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Assessment Kanban View -->
+    <record id="view_assessment_kanban" model="ir.ui.view">
+        <field name="name">assessment.kanban</field>
+        <field name="model">assessments.assessments</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="is_active">
+                <field name="title"/>
+                <field name="datetime"/>
+                <field name="max_marks"/>
+                <field name="passing_marks"/>
+                <field name="is_active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="title"/>
+                                </strong>
+                                <ul>
+                                    <li>Date: <field name="datetime"/></li>
+                                    <li>Venue: <field name="venue"/></li>
+                                    <li>Marks: <field name="max_marks"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Student Assessment Form View -->
+    <record model="ir.ui.view" id="student_assessment_form_view">
+      <field name="name">student.assessment.form</field>
+      <field name="model">assessments.student_assessment</field>
+      <field name="arch" type="xml">
+        <form string="Student Assessment">
+          <sheet>
+            <group>
+              <field name="assessment_id"/>
+              <field name="student_id"/>
+              <field name="marks"/>
+              <field name="status"/>
+              <field name="remarks"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Student Assessment Tree/List View -->
+    <record model="ir.ui.view" id="student_assessment_tree_view">
+      <field name="name">student.assessment.tree</field>
+      <field name="model">assessments.student_assessment</field>
+      <field name="arch" type="xml">
+        <tree string="Student Assessments">
+          <field name="assessment_id"/>
+          <field name="student_id"/>
+          <field name="marks"/>
+          <field name="status"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Actions for Assessments -->
+    <record model="ir.actions.act_window" id="assessment_action_window">
+      <field name="name">Assessments</field>
+      <field name="res_model">assessments.assessments</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create your first Assessment!
+        </p>
+      </field>
+    </record>
+
+    <!-- Actions for Student Assessments -->
+    <record model="ir.actions.act_window" id="student_assessment_action_window">
+      <field name="name">Student Assessments</field>
+      <field name="res_model">assessments.student_assessment</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Record student assessment results.
+        </p>
+      </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem name="Assessments" id="assessments_menu_root" web_icon="assessments,static/description/icon.png"/>
+    <menuitem name="All Assessments" id="assessments_menu_all" parent="assessments_menu_root"
+              action="assessment_action_window" sequence="10"/>
+    <menuitem name="Student Results" id="student_assessment_menu" parent="assessments_menu_root"
+              action="student_assessment_action_window" sequence="20"/>
+
+  </data>
+</odoo>

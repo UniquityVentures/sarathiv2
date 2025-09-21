@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_assignment_user,assignments.assignment_user,model_assignments_assignment,base.group_user,1,0,0,0
+access_assignment_manager,assignments.assignment_manager,model_assignments_assignment,base.group_user,1,1,1,1
+access_submitted_assignment_user,assignments.submitted_assignment_user,model_assignments_submitted_assignment,base.group_user,1,0,0,0
+access_submitted_assignment_manager,assignments.submitted_assignment_manager,model_assignments_submitted_assignment,base.group_user,1,1,1,1

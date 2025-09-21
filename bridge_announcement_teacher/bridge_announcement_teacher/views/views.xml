@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="bridge_announcement_teacher.list">
+      <field name="name">bridge_announcement_teacher list</field>
+      <field name="model">bridge_announcement_teacher.bridge_announcement_teacher</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="bridge_announcement_teacher.action_window">
+      <field name="name">bridge_announcement_teacher window</field>
+      <field name="res_model">bridge_announcement_teacher.bridge_announcement_teacher</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="bridge_announcement_teacher.action_server">
+      <field name="name">bridge_announcement_teacher server</field>
+      <field name="model_id" ref="model_bridge_announcement_teacher_bridge_announcement_teacher"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="bridge_announcement_teacher" id="bridge_announcement_teacher.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="bridge_announcement_teacher.menu_1" parent="bridge_announcement_teacher.menu_root"/>
+    <menuitem name="Menu 2" id="bridge_announcement_teacher.menu_2" parent="bridge_announcement_teacher.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="bridge_announcement_teacher.menu_1_list" parent="bridge_announcement_teacher.menu_1"
+              action="bridge_announcement_teacher.action_window"/>
+    <menuitem name="Server to list" id="bridge_announcement_teacher" parent="bridge_announcement_teacher.menu_2"
+              action="bridge_announcement_teacher.action_server"/>
+-->
+  </data>
+</odoo>

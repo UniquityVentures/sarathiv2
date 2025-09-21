@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bridge_announcement_courses_user,bridge.announcement.courses.user,model_bridge_announcement_courses_bridge_announcement_courses,base.group_user,1,0,0,0
+access_bridge_announcement_courses_manager,bridge.announcement.courses.manager,model_bridge_announcement_courses_bridge_announcement_courses,base.group_user,1,1,1,1
