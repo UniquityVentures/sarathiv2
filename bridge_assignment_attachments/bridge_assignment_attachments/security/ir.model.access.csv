@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bridge_assignment_attachments_user,bridge.assignment.attachments.user,model_bridge_assignment_attachments_bridge_assignment_attachments,base.group_user,1,0,0,0
-access_bridge_assignment_attachments_manager,bridge.assignment.attachments.manager,model_bridge_assignment_attachments_bridge_assignment_attachments,base.group_user,1,1,1,1

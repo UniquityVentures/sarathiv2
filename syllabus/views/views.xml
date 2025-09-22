@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+
+    <!-- Syllabus Tree/List View -->
+    <record model="ir.ui.view" id="syllabus_tree_view">
+      <field name="name">syllabus.tree</field>
+      <field name="model">syllabus.syllabus</field>
+      <field name="arch" type="xml">
+        <list string="Syllabi">
+          <field name="name"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Chapter Tree/List View -->
+    <record model="ir.ui.view" id="chapter_tree_view">
+      <field name="name">chapter.tree</field>
+      <field name="model">syllabus.chapter</field>
+      <field name="arch" type="xml">
+        <list string="Chapters">
+          <field name="syllabus_id"/>
+          <field name="name"/>
+          <field name="order"/>
+          <field name="book"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Actions for Syllabus -->
+    <record model="ir.actions.act_window" id="syllabus_action_window">
+      <field name="name">Syllabus</field>
+      <field name="res_model">syllabus.syllabus</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create your first Syllabus!
+        </p>
+      </field>
+    </record>
+
+    <!-- Actions for Chapters -->
+    <record model="ir.actions.act_window" id="chapter_action_window">
+      <field name="name">Chapters</field>
+      <field name="res_model">syllabus.chapter</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Manage chapters for your syllabi.
+        </p>
+      </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem name="Syllabus" id="syllabus_menu_root" web_icon="syllabus,static/description/icon.png"/>
+    <menuitem name="All Syllabi" id="syllabus_menu_all" parent="syllabus_menu_root"
+              action="syllabus_action_window" sequence="10"/>
+    <menuitem name="Chapters" id="syllabus_menu_chapters" parent="syllabus_menu_root"
+              action="chapter_action_window" sequence="20"/>
+
+  </data>
+</odoo>

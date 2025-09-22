@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bridge_syllabus_course_user,bridge.syllabus.course.user,model_syllabus_syllabus,base.group_user,1,0,0,0
-access_bridge_syllabus_course_manager,bridge.syllabus.course.manager,model_syllabus_syllabus,base.group_user,1,1,1,1

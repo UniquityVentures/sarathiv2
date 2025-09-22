@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bridge_assessment_topic_user,bridge.assessment.topic.user,model_bridge_assessment_topic_bridge_assessment_topic,base.group_user,1,0,0,0
-access_bridge_assessment_topic_manager,bridge.assessment.topic.manager,model_bridge_assessment_topic_bridge_assessment_topic,base.group_user,1,1,1,1

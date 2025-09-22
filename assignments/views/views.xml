@@ -1,0 +1,101 @@
+<odoo>
+  <data>
+
+    <!-- Assignment Tree/List View -->
+    <record model="ir.ui.view" id="assignment_tree_view">
+      <field name="name">assignment.tree</field>
+      <field name="model">assignments.assignment</field>
+      <field name="arch" type="xml">
+        <list string="Assignments" decoration-danger="not is_active">
+          <field name="title"/>
+          <field name="type"/>
+          <field name="release_at"/>
+          <field name="due_at"/>
+          <field name="total_marks"/>
+          <field name="is_active" invisible="1"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Assignment Kanban View -->
+    <record id="view_assignment_kanban" model="ir.ui.view">
+        <field name="name">assignment.kanban</field>
+        <field name="model">assignments.assignment</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="type">
+                <field name="title"/>
+                <field name="release_at"/>
+                <field name="due_at"/>
+                <field name="type"/>
+                <field name="total_marks"/>
+                <field name="is_active"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="title"/>
+                                </strong>
+                                <ul>
+                                    <li>Type: <field name="type"/></li>
+                                    <li>Due: <field name="due_at"/></li>
+                                    <li>Marks: <field name="total_marks"/></li>
+                                    <li>Active: <field name="is_active"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Submitted Assignment Tree/List View -->
+    <record model="ir.ui.view" id="submitted_assignment_tree_view">
+      <field name="name">submitted.assignment.tree</field>
+      <field name="model">assignments.submitted_assignment</field>
+      <field name="arch" type="xml">
+        <list string="Submitted Assignments" decoration-success="status == 'Submitted'" decoration-danger="status == 'Late'">
+          <field name="assignment_id"/>
+          <field name="marks"/>
+          <field name="status"/>
+          <field name="submission_datetime"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Actions for Assignments -->
+    <record model="ir.actions.act_window" id="assignment_action_window">
+      <field name="name">Assignments</field>
+      <field name="res_model">assignments.assignment</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create your first Assignment!
+        </p>
+      </field>
+    </record>
+
+    <!-- Actions for Submitted Assignments -->
+    <record model="ir.actions.act_window" id="submitted_assignment_action_window">
+      <field name="name">Submitted Assignments</field>
+      <field name="res_model">assignments.submitted_assignment</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Manage student submissions for assignments.
+        </p>
+      </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem name="Assignments" id="assignments_menu_root" web_icon="assignments,static/description/icon.png"/>
+    <menuitem name="All Assignments" id="assignments_menu_all" parent="assignments_menu_root"
+              action="assignment_action_window" sequence="10"/>
+    <menuitem name="Submissions" id="submitted_assignments_menu" parent="assignments_menu_root"
+              action="submitted_assignment_action_window" sequence="20"/>
+
+  </data>
+</odoo>

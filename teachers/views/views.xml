@@ -6,7 +6,6 @@
       <field name="model">teachers.teachers</field>
       <field name="arch" type="xml">
         <list>
-          <field name="name"/>
           <field name="code"/>
         </list>
       </field>
