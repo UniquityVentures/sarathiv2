@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Bridge Assessment Topic",
+    "license": "LGPL-3",
 
     'summary': "Bridge module for Assessments and Topics",
 
@@ -16,6 +17,9 @@ Bridge module to link Assessments with Topics.
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'assessments', 'topic'],

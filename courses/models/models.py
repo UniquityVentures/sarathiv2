@@ -7,9 +7,9 @@ class Courses(models.Model):
     _name = "courses.courses"
     _description = "courses.courses"
 
-    name = fields.Char(max_length=200)
+    name = fields.Char()
     active = fields.Boolean(default=True)
-    code = fields.Char(max_length=50)
-    description = fields.Text(blank=True, null=True)
-    remarks = fields.Text(blank=True, null=True)
+    code = fields.Char()
+    description = fields.Text()
+    remarks = fields.Text()
 

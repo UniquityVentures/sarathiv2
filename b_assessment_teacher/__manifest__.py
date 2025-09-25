@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Bridge Assessment Teacher",
+    "license": "LGPL-3",
 
     'summary': "Bridge module for Assessments and Teachers",
 
@@ -16,6 +17,9 @@ Bridge module to link Assessments with Teachers for created_by field.
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'assessments', 'teachers'],

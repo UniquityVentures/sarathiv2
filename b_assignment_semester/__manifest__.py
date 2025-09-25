@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Bridge Assignment Semester",
+    "license": "LGPL-3",
 
     'summary': "Bridge module for Assignments and Semester",
 
@@ -16,6 +17,9 @@ Bridge module to link Assignments with Semester.
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'assignments', 'semester'],

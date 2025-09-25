@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="semester.SwitchSemesterItem">
+    <span
+        class="d-flex o_switch_semester_item dropdown-item p-0 w-100"
+        t-att-class="{
+            'disabled': !isSemesterAllowed,
+            'o-navigable': isSemesterAllowed,
+            'alert-secondary': isSemesterSelected,
+        }"
+        tabindex="0"
+        data-menu="semester"
+        t-att-data-semester-id="props.semester.id"
+    >
+        <div
+            role="menuitemcheckbox"
+            t-att-aria-checked="isSemesterSelected ? 'true' : 'false'"
+            t-att-aria-label="props.semester.name"
+            t-att-title="(isSemesterSelected ? 'Hide ' : 'Show ') + props.semester.name + ' content.'"
+            class="border-end"
+            t-att-class="{ 'border-primary': isSemesterSelected, 'disabled': !isSemesterAllowed }"
+            t-on-click.stop="() => this.toggleSemester()"
+        >
+            <span class="btn border-0 px-2" t-att-class="isSemesterAllowed ? 'btn-link text-primary' : 'disabled'">
+                <i class="fa fa-fw py-1" t-att-class="isSemesterSelected ? 'fa-check-square text-primary' : 'fa-square-o'"/>
+            </span>
+        </div>
+
+        <div
+            role="button"
+            t-att-aria-pressed="isCurrent ? 'true' : 'false'"
+            t-att-aria-label="'Switch to ' + props.semester.name"
+            t-att-title="'Switch to ' + props.semester.name"
+            class="d-flex flex-grow-1 align-items-center py-0 log_into ps-2"
+            t-att-class="isCurrent ? 'bg-primary-subtle' : 'btn fw-normal border-0 ' + (isSemesterAllowed ? 'btn-link text-primary' : 'disabled')"
+            t-on-click="() => this.logIntoSemester()"
+        >
+            <span
+                class="semester_label text-700 text-truncate"
+                t-attf-style="padding-left:{{props.level * 20}}px;">
+                <t t-out="props.semester.name"/>
+            </span>
+        </div>
+    </span>
+</t>
+
+</templates>

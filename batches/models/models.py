@@ -11,4 +11,4 @@ class Batches(models.Model):
     active = fields.Boolean()
 
     description = fields.Text()
-    code = fields.Char(max_length=50)
+    code = fields.Char()

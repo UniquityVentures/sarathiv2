@@ -1,0 +1,8 @@
+<odoo>
+	<data>
+		<record model="ir.module.category" id="module_category_sarathi">
+			<field name="name">Sarathi</field>
+			<field name="sequence">901</field>
+		</record>
+	</data>
+</odoo>

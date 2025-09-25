@@ -1,0 +1,16 @@
+---
+description: When creating or initializing a new module
+alwaysApply: false
+---
+
+To create a new module, run `cd /home/sandy/source_repos/odoo && uv run ./odoo-bin app_name project_base_directory`
+Then edit manifest to have proper 
+name
+summary
+description
+author will be Uniquity Ventures
+website will be https://uniquity.in
+Don't leave these as the default values
+If it depends on other modules, add that in the depends list
+Add in the paths of all the files in data list
+For a bridge module, the name is b_app1_name_app2_name

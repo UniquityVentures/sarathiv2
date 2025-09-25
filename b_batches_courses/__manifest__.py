@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "BatchCourseBridge",
+    "license": "LGPL-3",
     "summary": "App for bridging functionality between batches and courses",
     "description": """
 App for bridging functionality between batches and courses
@@ -10,8 +11,11 @@ App for bridging functionality between batches and courses
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    "category": "Uncategorized",
+    "category": "Sarathi",
     "version": "0.1",
+    'installable': True,
+    'application': True,
+    'auto_install': True,
     # any module necessary for this one to work correctly
     "depends": ["base", "batches", "courses"],
     # always loaded

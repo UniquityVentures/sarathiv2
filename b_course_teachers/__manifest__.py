@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Bridge Course Teachers",
+    "license": "LGPL-3",
 
     'summary': "Bridge Course Teachers",
 
@@ -16,6 +17,9 @@ Bridge Course Teachers
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'courses', 'teachers'],

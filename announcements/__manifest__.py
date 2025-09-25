@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Announcements",
+    "license": "LGPL-3",
 
     'summary': "Module for Management of Announcements",
 
@@ -16,6 +17,9 @@ Module for Management of Announcements
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'teachers', 'semester', 'batches', 'courses'],

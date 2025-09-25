@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Bridge Announcement Batches",
+    "license": "LGPL-3",
 
     'summary': "Bridge module for Announcements and Batches",
 
@@ -16,6 +17,9 @@ Bridge module to link Announcements with Batches.
     # for the full list
     'category': 'Sarathi',
     'version': '0.1',
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'announcements', 'batches'],

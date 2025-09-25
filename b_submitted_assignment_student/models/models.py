@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class SubmittedAssignment(models.Model):
-    _inherit = 'assignments.submitted_assignment'
+    _inherit = [ 'assignments.submitted_assignment' ]
 
     student_id = fields.Many2one(
         'students.students', string='Student', required=True, ondelete='cascade')

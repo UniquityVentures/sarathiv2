@@ -7,5 +7,5 @@ class Teachers(models.Model):
     _name = 'teachers.teachers'
     _description = 'teachers.teachers'
 
-    code = fields.Char(max_length=50, unique=True)
-    qualifications = fields.Text("Qualifications", blank=True, null=True)
+    code = fields.Char()
+    qualifications = fields.Text("Qualifications")
