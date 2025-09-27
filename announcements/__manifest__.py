@@ -22,7 +22,7 @@ Module for Management of Announcements
     'auto_install': True,
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'teachers', 'semester', 'batches', 'courses'],
+    'depends': ['base', 'teachers', 'batches', 'courses'],
 
     # always loaded
     'data': [
